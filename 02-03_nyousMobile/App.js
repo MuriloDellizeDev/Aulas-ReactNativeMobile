@@ -14,22 +14,22 @@ const Stack = createStackNavigator();
 import Login from './pages/Login/login';
 import Home from './pages/Home/home';
 
-const Logout = ({navigation}) =>{
-  return(
+// const Logout = ({navigation}) =>{
+//   return(
 
-    <View style={styles.container}>
+//     <View style={styles.container}>
 
-      <Text style={{color: "white", marginBottom: 20}}>Tem certeza de que quer sair?</Text>
-      <Button title="Sair" onPress={() => {
-        AsyncStorage.removeItem("jwt");
-        navigation.push("Login");
-      }}></Button>
+//       <Text style={{color: "white", marginBottom: 20}}>Tem certeza de que quer sair?</Text>
+//       <Button title="Sair" onPress={() => {
+//         AsyncStorage.removeItem("jwt");
+//         navigation.push("Login");
+//       }}></Button>
       
-    </View>
-  )
+//     </View>
+//   )
 
 
-}
+//}
 
 const Autenticado = () => {
   return (

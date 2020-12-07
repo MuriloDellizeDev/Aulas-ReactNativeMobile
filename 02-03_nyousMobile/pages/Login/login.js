@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StyleSheet, Text, View, TextInput, TouchableOpacity} from "react-native";
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
@@ -47,8 +47,16 @@ const Login = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+
+    <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: 'https://drive.google.com/thumbnail?id=1lFfMpoUQL9Y_P24kj1PquasA8znCMRaw&authuser=1&sz=w1349-h568',
+        }}
+      />
+           
             
-            <Text>Login</Text>
+            <Text style={styles.loginText}>Login</Text>
 
             <TextInput 
                 style={styles.input} 
@@ -72,18 +80,24 @@ const Login = ({navigation}) => {
                 <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
 
+            <Text 
+                style={styles.linkText}
+                onPress={() => Linking.openURL('http://google.com')}>
+                Esqueceu sua senha 
+            </Text>
+
         </View>
     )
 }
 
 
 const styles = StyleSheet.create({
-    container: {
-
+    container: { 
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+
 
     },
     input : {
@@ -99,7 +113,7 @@ const styles = StyleSheet.create({
     },
     button : {
 
-        backgroundColor : 'black',
+        backgroundColor : '#0069D9',
         padding: 10,
         borderRadius: 6,
         width: "90%",
@@ -113,7 +127,24 @@ const styles = StyleSheet.create({
 
         color: 'white'
 
-    }
+    },
+    loginText : {
+
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginTop: 10,
+
+    },
+    tinyLogo: {
+        width: '50%',
+        height: 100,
+    },
+    linkText : {
+
+        color: 'blue',
+        marginTop: 10
+
+    } 
   });
 
 export default Login;
